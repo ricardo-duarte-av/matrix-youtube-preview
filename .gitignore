@@ -32,3 +32,9 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Bot runtime data (crypto DB, cookies) and real config
+data/
+config.yaml
+cookies.txt
+/matrix-youtube-preview

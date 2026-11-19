@@ -1,0 +1,30 @@
+# Copy to config.yaml and fill in.
+
+# Homeserver base URL
+server: https://matrix.example.org
+# Full MXID (@ytbot:example.org) or just the localpart (ytbot)
+user: "@ytbot:example.org"
+password: "change-me"
+
+# --- Optional settings (defaults shown) ---
+
+# SQLite DB holding the E2EE keys, device ID and sync state.
+# Keep it on a persistent volume: losing it means a new device and lost keys.
+database: /data/bot.db
+# Encrypts the E2EE keys at rest. Never change it after the first run.
+pickle_key: "change-me-to-something-random"
+device_name: YouTube Preview Bot
+
+youtube:
+  # Without cookies the bot still shows title, channel, views, likes, date,
+  # description and thumbnail. Cookies (Netscape cookies.txt from a logged-in
+  # browser) additionally get past YouTube's bot check, which adds the duration.
+  cookies_file: ""            # e.g. /data/cookies.txt
+  # Should match the browser the cookies were exported from.
+  user_agent: ""
+
+# Send the thumbnail as an image with the preview as caption.
+# false = text-only m.notice.
+send_thumbnail: true
+max_links_per_message: 3
+log_level: info

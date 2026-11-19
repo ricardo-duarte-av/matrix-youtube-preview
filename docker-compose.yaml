@@ -1,0 +1,12 @@
+services:
+  matrix-youtube-preview:
+    image: ghcr.io/ricardo-duarte-av/matrix-youtube-preview:latest
+    # Or build locally:
+    # build: .
+    container_name: matrix-youtube-preview
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/config/config.yaml:ro
+      # Persistent E2EE keys / device / sync state (and optionally cookies.txt).
+      # The container runs as uid 65532; run `mkdir -p data && sudo chown 65532:65532 data` first.
+      - ./data:/data
